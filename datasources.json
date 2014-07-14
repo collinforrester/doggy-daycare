@@ -1,17 +1,17 @@
 {
   "db": {
-    "defaultForType": "db",
-    "connector": "memory"
+    "connector": "memory",
+    "defaultForType": "db"
   },
   "push": {
-    "defaultForType": "push",
     "connector": "loopback-component-push",
+    "defaultForType": "push",
     "installation": "installation",
     "notification": "notification",
     "application": "application"
   },
   "mail": {
-    "defaultForType": "mail",
-    "connector": "mail"
+    "connector": "mail",
+    "defaultForType": "mail"
   }
 }

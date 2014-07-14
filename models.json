@@ -9,6 +9,14 @@
   "user": {
     "dataSource": "db",
     "public": true,
+    "properties": {
+      "username": {
+        "type": "string"
+      },
+      "dogs": {
+        "type": "array"
+      }
+    },
     "options": {
       "base": "User",
       "relations": {
@@ -16,6 +24,11 @@
           "model": "accessToken",
           "type": "hasMany",
           "foreignKey": "userId"
+        },
+        "dogs": {
+          "model": "Dog",
+          "type": "hasMany",
+          "foreignKey": "dogs"
         }
       }
     }
@@ -88,6 +101,42 @@
     "public": true,
     "options": {
       "base": "Notification"
+    }
+  },
+  "dog": {
+    "dataSource": "db",
+    "public": true,
+    "plural": "dogs",
+    "options": {
+      "relations": {
+        "owner": {
+          "type": "belongsTo",
+          "model": "User",
+          "foreignKey": "owner"
+        },
+        "friends": {
+          "type": "hasMany",
+          "model": "Dog",
+          "foreignKey": "friends"
+        }
+      }
+    },
+    "properties": {
+      "owner": {
+        "type": "number"
+      },
+      "friends": {
+        "type": "array"
+      },
+      "breeds": {
+        "type": "array"
+      },
+      "age": {
+        "type": "number"
+      },
+      "weight": {
+        "type": "number"
+      }
     }
   }
 }
