@@ -1,5 +1,6 @@
 var loopback = require('loopback');
 var path = require('path');
+var fs = require('fs');
 var app = module.exports = loopback();
 
 /*
@@ -30,7 +31,20 @@ app.use(loopback.methodOverride());
  * Example:
  *   app.use(loopback.limit('5.5mb'))
  */
+// Require models, make sure it happens before api explorer
+fs
+  .readdirSync(path.join(__dirname, './models'))
+  .filter(function(m) {
+    return path.extname(m) === '.js';
+  })
+  .forEach(function(m) {
+    // expose model over rest
+    app.model(require('./models/' + m));
+  });
 
+// Setup LoopBack access-control
+var db = require('./data-sources/db');
+app.dataSources.db = db;
 /*
  * 3. Setup request handlers.
  */

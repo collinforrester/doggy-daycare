@@ -1,0 +1,28 @@
+[
+  {
+    "id": 0,
+    "username": "lou",
+    "dogs": [0,1]
+  },
+  {
+    "id": 1,
+    "username": "liza",
+    "dogs": [2,3]
+  },
+  {
+    "id": 2,
+    "username": "cindy"
+  },
+  {
+    "id": 3,
+    "username": "tabitha"
+  },
+  {
+    "id": 4,
+    "username": "wilkinson"
+  },
+  {
+    "id": 5,
+    "username": "bridges"
+  }
+]

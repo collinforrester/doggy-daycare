@@ -1,0 +1,79 @@
+[
+  {
+    "id": 0,
+    "age": 9,
+    "name": "Walker",
+    "gender": "male",
+    "breeds": [
+      "boxer",
+      "pitt"
+    ],
+    "weight": 38,
+    "owner": 0,
+    "friends": [2, 3]
+  },
+  {
+    "id": 1,
+    "age": 10,
+    "name": "Beverley",
+    "gender": "female",
+    "breeds": [
+      "boxer",
+      "pitt"
+    ],
+    "weight": 60,
+    "owner": 0,
+    "friends": [2, 3]
+  },
+  {
+    "id": 2,
+    "age": 6,
+    "name": "Cherry",
+    "gender": "female",
+    "breeds": [
+      "shepherd",
+      "boxer"
+    ],
+    "weight": 67,
+    "owner": 1,
+    "friends": [0, 1]
+  },
+  {
+    "id": 3,
+    "age": 1,
+    "name": "Angela",
+    "gender": "female",
+    "breeds": [
+      "shepherd",
+      "terrier",
+      "terrier"
+    ],
+    "weight": 39,
+    "owner": 1,
+    "friends": [0, 1]
+  },
+  {
+    "id": 4,
+    "age": 6,
+    "name": "May",
+    "gender": "female",
+    "breeds": [
+      "boxer",
+      "rotty",
+      "boxer"
+    ],
+    "weight": 60
+  },
+  {
+    "id": 5,
+    "age": 10,
+    "name": "June",
+    "gender": "female",
+    "breeds": [
+      "shepherd",
+      "pitt",
+      "rotty"
+    ],
+    "weight": 32
+  }
+]

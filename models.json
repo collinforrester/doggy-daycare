@@ -134,6 +134,12 @@
       "age": {
         "type": "number"
       },
+      "name": {
+        "type": "string"
+      },
+      "gender": {
+        "type": "string"
+      },
       "weight": {
         "type": "number"
       }
