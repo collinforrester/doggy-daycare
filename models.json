@@ -24,11 +24,6 @@
           "model": "accessToken",
           "type": "hasMany",
           "foreignKey": "userId"
-        },
-        "dogs": {
-          "model": "Dog",
-          "type": "hasMany",
-          "foreignKey": "dogs"
         }
       }
     }
@@ -108,23 +103,9 @@
     "public": true,
     "plural": "dogs",
     "options": {
-      "relations": {
-        "owner": {
-          "type": "belongsTo",
-          "model": "User",
-          "foreignKey": "owner"
-        },
-        "friends": {
-          "type": "hasMany",
-          "model": "Dog",
-          "foreignKey": "friends"
-        }
-      }
+      "relations": {}
     },
     "properties": {
-      "owner": {
-        "type": "number"
-      },
       "friends": {
         "type": "array"
       },

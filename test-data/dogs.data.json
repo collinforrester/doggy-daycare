@@ -9,7 +9,7 @@
       "pitt"
     ],
     "weight": 38,
-    "owner": 0,
+    "owner": "0",
     "friends": [2, 3]
   },
   {
@@ -22,7 +22,7 @@
       "pitt"
     ],
     "weight": 60,
-    "owner": 0,
+    "owner": "0",
     "friends": [2, 3]
   },
   {
@@ -35,7 +35,7 @@
       "boxer"
     ],
     "weight": 67,
-    "owner": 1,
+    "owner": "1",
     "friends": [0, 1]
   },
   {
@@ -49,7 +49,7 @@
       "terrier"
     ],
     "weight": 39,
-    "owner": 1,
+    "owner": "1",
     "friends": [0, 1]
   },
   {

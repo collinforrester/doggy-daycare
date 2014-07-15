@@ -120,6 +120,33 @@ app.use(loopback.errorHandler());
 
 app.get('/', loopback.status());
 
+var User = require('./models/user');
+User.hasMany(require('./models/dog'));
+
+console.log(User.prototype.dogs);
+app.get('/a', function(req, res) {
+  var Dog = require('./models/dog');
+  var User = require('./models/user');
+
+  Dog.findById(1, function(err, dog) {
+    console.log(dog);
+    User.create({ username: 'asdf', dogs: dog.id }, function(e, u) {
+      if(e) throw new Error(e);
+      u.dogs.create(dog, function(err, d) {
+        
+        if(err) throw new Error(err);
+        return res.json(u, 200);
+      });
+    });
+    // var owner = dog.owner.build({
+    //   username: 'asdf'
+    // });
+    // console.log(owner);
+
+    // res.json(dog, 200);
+  });
+});
+
 /*
  * 6. Enable access control and token based authentication.
  */

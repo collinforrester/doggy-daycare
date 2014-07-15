@@ -1,13 +1,11 @@
 [
   {
     "id": 0,
-    "username": "lou",
-    "dogs": [0,1]
+    "username": "lou"
   },
   {
     "id": 1,
-    "username": "liza",
-    "dogs": [2,3]
+    "username": "liza"
   },
   {
     "id": 2,

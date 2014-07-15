@@ -15,4 +15,6 @@ var Dog = db.createModel(
   config.options
 );
 
+Dog.belongsTo(require('./user'), { as: 'owner', foreignKey: 'owner' });
+
 module.exports = Dog;
