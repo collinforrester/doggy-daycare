@@ -1,0 +1,38 @@
+[
+  {
+    "kennelId": 1,
+    "dogId": 1,
+    "dateIn": 1405448059332,
+    "dateOut": 1405448059332
+  },
+  {
+    "kennelId": 1,
+    "dogId": 2,
+    "dateIn": 1405448059332,
+    "dateOut": 0
+  },
+  {
+    "kennelId": 1,
+    "dogId": 2,
+    "dateIn": 1405448059332,
+    "dateOut": 1405448059332
+  },
+  {
+    "kennelId": 2,
+    "dogId": 1,
+    "dateIn": 1405448059332,
+    "dateOut": 1405448059332
+  },
+  {
+    "kennelId": 3,
+    "dogId": 5,
+    "dateIn": 1405448059332,
+    "dateOut": 0
+  },
+  {
+    "kennelId": 1,
+    "dogId": 4,
+    "dateIn": 1405448059332,
+    "dateOut": 0
+  }
+]

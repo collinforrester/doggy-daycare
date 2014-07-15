@@ -33,6 +33,10 @@ app.use(loopback.methodOverride());
  */
 
 var db = require('./boot/db');
+loopback.AccessToken.attachTo(db);
+loopback.Role.attachTo(db);
+loopback.ACL.attachTo(db);
+loopback.RoleMapping.attachTo(db);
 app.dataSources.db = db;
 
 /*

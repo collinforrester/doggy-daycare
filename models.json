@@ -3,7 +3,15 @@
     "dataSource": "mail",
     "public": false,
     "options": {
-      "base": "Email"
+      "base": "Email",
+      "acls": [
+        {
+          "accessType": "*",
+          "permission": "DENY",
+          "principalType": "ROLE",
+          "principalId": "$everyone"
+        }
+      ]
     }
   },
   "user": {
@@ -22,10 +30,21 @@
           "type": "hasMany",
           "foreignKey": "ownerId"
         }
-      }
+      },
+      "acls": [
+        {
+          "accessType": "*",
+          "permission": "DENY",
+          "principalType": "ROLE",
+          "principalId": "$everyone"
+        }
+      ]
     },
     "properties": {
       "username": {
+        "type": "string"
+      },
+      "password": {
         "type": "string"
       }
     }
@@ -34,28 +53,60 @@
     "dataSource": "db",
     "public": true,
     "options": {
-      "base": "AccessToken"
+      "base": "AccessToken",
+      "acls": [
+        {
+          "accessType": "*",
+          "permission": "DENY",
+          "principalType": "ROLE",
+          "principalId": "$everyone"
+        }
+      ]
     }
   },
   "application": {
     "dataSource": "db",
     "public": true,
     "options": {
-      "base": "Application"
+      "base": "Application",
+      "acls": [
+        {
+          "accessType": "*",
+          "permission": "DENY",
+          "principalType": "ROLE",
+          "principalId": "$everyone"
+        }
+      ]
     }
   },
   "acl": {
     "dataSource": "db",
     "public": false,
     "options": {
-      "base": "ACL"
+      "base": "ACL",
+      "acls": [
+        {
+          "accessType": "*",
+          "permission": "DENY",
+          "principalType": "ROLE",
+          "principalId": "$everyone"
+        }
+      ]
     }
   },
   "roleMapping": {
     "dataSource": "db",
     "public": false,
     "options": {
-      "base": "RoleMapping"
+      "base": "RoleMapping",
+      "acls": [
+        {
+          "accessType": "*",
+          "permission": "DENY",
+          "principalType": "ROLE",
+          "principalId": "$everyone"
+        }
+      ]
     }
   },
   "role": {
@@ -69,42 +120,89 @@
           "model": "roleMapping",
           "foreignKey": "roleId"
         }
-      }
+      },
+      "acls": [
+        {
+          "accessType": "*",
+          "permission": "DENY",
+          "principalType": "ROLE",
+          "principalId": "$everyone"
+        }
+      ]
     }
   },
   "scope": {
     "dataSource": "db",
     "public": false,
     "options": {
-      "base": "Scope"
+      "base": "Scope",
+      "acls": [
+        {
+          "accessType": "*",
+          "permission": "DENY",
+          "principalType": "ROLE",
+          "principalId": "$everyone"
+        }
+      ]
     }
   },
   "push": {
     "dataSource": "push",
     "options": {
       "base": "Push",
-      "plural": "push"
+      "plural": "push",
+      "acls": [
+        {
+          "accessType": "*",
+          "permission": "DENY",
+          "principalType": "ROLE",
+          "principalId": "$everyone"
+        }
+      ]
     }
   },
   "installation": {
     "dataSource": "db",
     "public": true,
     "options": {
-      "base": "Installation"
+      "base": "Installation",
+      "acls": [
+        {
+          "accessType": "*",
+          "permission": "DENY",
+          "principalType": "ROLE",
+          "principalId": "$everyone"
+        }
+      ]
     }
   },
   "notification": {
     "dataSource": "db",
     "public": true,
     "options": {
-      "base": "Notification"
+      "base": "Notification",
+      "acls": [
+        {
+          "accessType": "*",
+          "permission": "DENY",
+          "principalType": "ROLE",
+          "principalId": "$everyone"
+        }
+      ]
     }
   },
   "dog": {
     "dataSource": "db",
     "public": true,
     "options": {
-      "relations": {}
+      "acls": [
+        {
+          "accessType": "*",
+          "permission": "DENY",
+          "principalType": "ROLE",
+          "principalId": "$everyone"
+        }
+      ]
     },
     "plural": "dogs",
     "properties": {
@@ -128,13 +226,56 @@
       }
     }
   },
-  "gang": {
+  "kennel": {
     "dataSource": "db",
     "public": true,
-    "plural": "gangs",
+    "options": {
+      "acls": [
+        {
+          "accessType": "*",
+          "permission": "DENY",
+          "principalType": "ROLE",
+          "principalId": "$everyone"
+        }
+      ]
+    },
+    "plural": "kennels",
     "properties": {
-      "violent": {
-        "type": "boolean"
+      "name": {
+        "type": "string"
+      }
+    }
+  },
+  "visit": {
+    "dataSource": "db",
+    "public": false,
+    "options": {
+      "acls": [
+        {
+          "accessType": "*",
+          "permission": "DENY",
+          "principalType": "ROLE",
+          "principalId": "$everyone"
+        }
+      ]
+    },
+    "plural": "visits",
+    "properties": {
+      "kenneladhoc": {
+        "type": "string"
+      },
+      "kennelId": {
+        "type": "number"
+      },
+      "dogId": {
+        "type": "number"
+      },
+      "dateIn": {
+        "type": "date"
+      },
+      "dateOut": {
+        "type": "date",
+        "default": 0
       }
     }
   }

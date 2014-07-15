@@ -1,10 +1,13 @@
 var Models = require('../models/models');
 var Dog = Models.Dog;
 var User = Models.User;
-var Gang = Models.Gang;
+var Kennel = Models.Kennel;
+var Visit = Models.Visit;
 
 var dogs = require('../test-data/dogs.data.json');
 var users = require('../test-data/users.data.json');
+var kennels = require('../test-data/kennels.data.json');
+var visits = require('../test-data/visits.data.json');
 
 var async = require('async');
 var db = require('../boot/db');
@@ -30,9 +33,6 @@ function importData(Model, data, cb) {
         ids[Model.modelName] = 1;
       }
       d.id = ids[Model.modelName]++;
-      if(Model.prototype === Dog.prototype) {
-        d.dogs = [1];
-      }
       Model.create(d, callback);
     }, cb);
   });
@@ -45,12 +45,20 @@ async.series(
     },
 
     importData.bind(null, Dog, dogs),
+    importData.bind(null, Visit, visits),
+    importData.bind(null, Kennel, kennels),
     importData.bind(null, User, users),
     function(cb) {
-      Gang.create({
-        members: [1,2],
-        violent: false
-      }, cb);
+      Visit.find({}, function(e, visits) {
+        cb();
+        // dogs[5].friends.add(dogs[1], function(){});
+        // dogs[1].friends.add(dogs[5], cb);
+        // g.dogs.add(dogs[0], cb);
+      });
+      // Gang.create({
+      //   violent: false
+      // }, function(e, g) {
+      // });
       // Dog.find({}, function(e, dogs) {
       //   if(e) throw new Error(e);
       //   console.log(dogs);

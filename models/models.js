@@ -27,26 +27,45 @@ var User = db.createModel(
 );
 
 /**
- * gang Model
+ * kennel Model
  */
 
-var Gang = db.createModel(
-  'gang',
-  config.gang.properties,
-  config.gang.options
+var Kennel = db.createModel(
+  'kennel',
+  config.kennel.properties,
+  config.kennel.options
+);
+
+/**
+ * visit Model
+ */
+
+var Visit = db.createModel(
+  'visit',
+  config.visit.properties,
+  config.visit.options
 );
 
 Dog.belongsTo(User, { foreignKey: 'ownerId', as: 'owner' });
+Kennel.belongsTo(User, { foreignKey: 'ownerId', as: 'owner' });
 User.hasMany(Dog, { foreignKey: 'ownerId', as: 'dogs' });
-Dog.hasAndBelongsToMany(Gang, { as: 'gangs' });
-Gang.hasAndBelongsToMany(Dog, { as: 'members' });
+User.hasMany(Kennel, { foreignKey: 'ownerId', as: 'kennels' });
+
+Visit.belongsTo(Dog);
+Visit.belongsTo(Kennel);
+Visit.scope('current', { include: ['dog', 'kennel'], where: { dateOut: { lte: 0 }}});
+
+Kennel.hasMany(Dog, { through: Visit });
+Dog.hasMany(Kennel, { through: Visit });
 
 app.model(User);
 app.model(Dog);
-app.model(Gang);
+app.model(Kennel);
+app.model(Visit);
 
 module.exports = {
 	User: User,
-	Dog: Dog,
-	Gang: Gang
+  Dog: Dog,
+	Visit: Visit,
+	Kennel: Kennel
 };

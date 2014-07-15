@@ -1,0 +1,14 @@
+[
+  {
+    "name": "Humane Society",
+    "ownerId": 1
+  },
+  {
+    "name": "Council Bluffs Animal Shelter",
+    "ownerId": 2
+  },
+  {
+    "name": "Tully's",
+    "ownerId": 3
+  }
+]

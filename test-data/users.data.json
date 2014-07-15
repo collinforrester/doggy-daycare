@@ -1,26 +1,32 @@
 [
   {
     "id": 0,
-    "username": "lou"
+    "username": "lou",
+    "password": "asdf"
   },
   {
     "id": 1,
-    "username": "liza"
+    "username": "liza",
+    "password": "asdf"
   },
   {
     "id": 2,
-    "username": "cindy"
+    "username": "cindy",
+    "password": "asdf"
   },
   {
     "id": 3,
-    "username": "tabitha"
+    "username": "tabitha",
+    "password": "asdf"
   },
   {
     "id": 4,
-    "username": "wilkinson"
+    "username": "wilkinson",
+    "password": "asdf"
   },
   {
     "id": 5,
-    "username": "bridges"
+    "username": "bridges",
+    "password": "asdf"
   }
 ]
