@@ -9,8 +9,8 @@
       "pitt"
     ],
     "weight": 38,
-    "owner": "0",
-    "friends": [2, 3]
+    "ownerId": 2,
+    "dogs": [2, 3]
   },
   {
     "id": 1,
@@ -22,8 +22,8 @@
       "pitt"
     ],
     "weight": 60,
-    "owner": "0",
-    "friends": [2, 3]
+    "ownerId": 2,
+    "dogs": [2, 3]
   },
   {
     "id": 2,
@@ -35,8 +35,8 @@
       "boxer"
     ],
     "weight": 67,
-    "owner": "1",
-    "friends": [0, 1]
+    "ownerId": 1,
+    "dogs": [0, 1]
   },
   {
     "id": 3,
@@ -49,8 +49,8 @@
       "terrier"
     ],
     "weight": 39,
-    "owner": "1",
-    "friends": [0, 1]
+    "ownerId": 1,
+    "dogs": [0, 1]
   },
   {
     "id": 4,
@@ -62,6 +62,7 @@
       "rotty",
       "boxer"
     ],
+    "ownerId": 3,
     "weight": 60
   },
   {
@@ -74,6 +75,7 @@
       "pitt",
       "rotty"
     ],
+    "ownerId": 4,
     "weight": 32
   }
 ]

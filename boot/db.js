@@ -14,5 +14,5 @@ try {
 
 process.nextTick(function () {
   // import data
-  require('../test-data/import');
+  require('./import');
 });

@@ -31,20 +31,10 @@ app.use(loopback.methodOverride());
  * Example:
  *   app.use(loopback.limit('5.5mb'))
  */
-// Require models, make sure it happens before api explorer
-fs
-  .readdirSync(path.join(__dirname, './models'))
-  .filter(function(m) {
-    return path.extname(m) === '.js';
-  })
-  .forEach(function(m) {
-    // expose model over rest
-    app.model(require('./models/' + m));
-  });
 
-// Setup LoopBack access-control
-var db = require('./data-sources/db');
+var db = require('./boot/db');
 app.dataSources.db = db;
+
 /*
  * 3. Setup request handlers.
  */
@@ -119,33 +109,6 @@ app.use(loopback.errorHandler());
  */
 
 app.get('/', loopback.status());
-
-var User = require('./models/user');
-User.hasMany(require('./models/dog'));
-
-console.log(User.prototype.dogs);
-app.get('/a', function(req, res) {
-  var Dog = require('./models/dog');
-  var User = require('./models/user');
-
-  Dog.findById(1, function(err, dog) {
-    console.log(dog);
-    User.create({ username: 'asdf', dogs: dog.id }, function(e, u) {
-      if(e) throw new Error(e);
-      u.dogs.create(dog, function(err, d) {
-        
-        if(err) throw new Error(err);
-        return res.json(u, 200);
-      });
-    });
-    // var owner = dog.owner.build({
-    //   username: 'asdf'
-    // });
-    // console.log(owner);
-
-    // res.json(dog, 200);
-  });
-});
 
 /*
  * 6. Enable access control and token based authentication.
